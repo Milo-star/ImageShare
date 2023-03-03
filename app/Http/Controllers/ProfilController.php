@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 class ProfilController extends Controller
 {
     public function profile()
@@ -32,5 +30,6 @@ class ProfilController extends Controller
         session()->flash('success', 'Vos changements ont été enregistrés avec succès!');
         return redirect()->route('profile')->with('success', 'Votre profil a été mis à jour avec succès.');
     }
+
     
 }

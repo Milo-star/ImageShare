@@ -52,7 +52,7 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->save();
+        $user->save();        
     
         // Log the user in and redirect them to their dashboard
         Auth::login($user);
