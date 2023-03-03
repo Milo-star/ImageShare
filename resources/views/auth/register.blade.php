@@ -40,10 +40,15 @@
                     class="w-full bg-blue-500 text-white py-2 px-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600">
                     S'inscrire
                 </button>
-                
-                <button>
-                    <a href="{{ route('welcome') }}" class="text-blue-500 hover:text-blue-600">Retour à l'accueil</a>
-                </button>
+
+                <div class="flex justify-between">
+                    <button>
+                        <a href="{{ route('welcome') }}" class="text-blue-500 hover:text-blue-600">Retour à l'accueil</a>
+                    </button>
+                    <button>
+                        <a href="{{ route('login') }}" class="text-blue-500 hover:text-blue-600 ">Se connecter</a>
+                    </button>
+                </div>
 
                 @if ($errors->has('email'))
                 <div class="text-red-500 mt-2">

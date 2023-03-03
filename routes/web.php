@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,7 @@ Route::get('/home', [AuthController::class, 'home'])->name('welcome');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-
-
+Route::get('/profil', [ProfilController::class, 'profile'])->name('profile');

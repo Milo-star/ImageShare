@@ -14,6 +14,8 @@ class AuthController extends Controller
     {
         return view('welcome');
     }
+
+    // Register
     public function showRegistrationForm()
     {
         return view('auth.register');
@@ -47,7 +49,7 @@ class AuthController extends Controller
         return redirect('/profile');
     }
     
-
+    // Login
     public function showLoginForm()
     {
         return view('auth.login');
@@ -64,13 +66,14 @@ class AuthController extends Controller
         // Tentative de connexion de l'utilisateur
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Connexion réussie, redirection vers la page d'accueil ou une autre page de votre choix
-            return redirect()->route('welcome');
+            return redirect()->route('profile');
         }
 
         // Échec de la connexion, redirection vers la page de connexion avec un message d'erreur
-        return redirect()->route('auth.login')->with('error', 'Adresse e-mail ou mot de passe incorrect.');
+        return redirect('/login')->with('error', 'Adresse e-mail ou mot de passe incorrect.');
     }
 
+    // Logout
     public function logout()
     {
         Auth::logout();
