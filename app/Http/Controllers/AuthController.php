@@ -10,6 +10,10 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function home()
+    {
+        return view('welcome');
+    }
     public function showRegistrationForm()
     {
         return view('auth.register');
