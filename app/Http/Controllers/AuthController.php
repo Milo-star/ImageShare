@@ -12,15 +12,8 @@ class AuthController extends Controller
 {
     public function home()
     {
-        // Vérifie si l'utilisateur est connecté
-        if (Auth::check()) {
-            return view('welcome');
-        } else {
-            return redirect()->route('login');
-        }
+        return view('welcome');
     }
-
-    // ...
 
     public function profile()
     {
@@ -63,7 +56,7 @@ class AuthController extends Controller
     
         // Log the user in and redirect them to their dashboard
         Auth::login($user);
-        return redirect('/profile');
+        return redirect('/profil');
     }
     
     // Login

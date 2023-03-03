@@ -30,3 +30,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/profil', [ProfilController::class, 'profile'])->name('profile')->middleware('auth');
+Route::post('/profil/update', [ProfilController::class, 'updateProfile'])->name('update.profile');
