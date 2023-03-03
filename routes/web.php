@@ -27,4 +27,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::get('/profil', [ProfilController::class, 'profile'])->name('profile');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/profil', [ProfilController::class, 'profile'])->name('profile')->middleware('auth');

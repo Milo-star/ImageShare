@@ -12,7 +12,24 @@ class AuthController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        // Vérifie si l'utilisateur est connecté
+        if (Auth::check()) {
+            return view('welcome');
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    // ...
+
+    public function profile()
+    {
+        // Vérifie si l'utilisateur est connecté
+        if (Auth::check()) {
+            return view('profil');
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     // Register
@@ -77,6 +94,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('welcome');
+        return redirect('/home');
     }
 }
