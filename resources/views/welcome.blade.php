@@ -19,15 +19,18 @@
         Crée un partage
       </a>
     </div>
-    <div>
-      <a href="{{ route('login') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0 mx-4">Login</a>
-    </div>
-    <div>
-      <a href="{{ route('register') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0">S'inscrire</a>
-    </div>
-    <div>
-      <a href="{{ route('profile') }}" ><img src="https://cdn-icons-png.flaticon.com/32/847/847969.png" alt="Profile Picture" class="mx-4"></a>
-    </div>
+    @auth
+      <div>
+        <a href="{{ route('profile') }}" ><img src="https://cdn-icons-png.flaticon.com/32/847/847969.png" alt="Profile Picture" class="mx-4"></a>
+      </div>
+    @else
+      <div>
+        <a href="{{ route('login') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0 mx-4">Login</a>
+      </div>
+      <div>
+        <a href="{{ route('register') }}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0">S'inscrire</a>
+      </div>
+    @endauth
   </div>
 </nav>
 
