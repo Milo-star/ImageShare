@@ -22,4 +22,10 @@ class Pin extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function active()
+    {
+        return self::where('status', 'active')->orderByDesc('id')->get();
+    }
+
 }

@@ -10,11 +10,6 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function home()
-    {
-        return view('welcome');
-    }
-
     public function profile()
     {
         // Vérifie si l'utilisateur est connecté

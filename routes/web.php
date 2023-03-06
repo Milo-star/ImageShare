@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\MyProfilController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,7 @@ use App\Http\Controllers\ProfilController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', [AuthController::class, 'home'])->name('welcome');
+Route::get('/home', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
@@ -29,5 +27,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/profil', [ProfilController::class, 'profile'])->name('profile')->middleware('auth');
-Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');
+Route::get('/profil', [MyProfilController::class, 'profile'])->name('profile')->middleware('auth');
+Route::put('/profil/update', [MyProfilController::class, 'updateProfile'])->name('profil.update');
+Route::get('/profil/{id}', [ProfilController::class, 'show'])->name('profile.show');
