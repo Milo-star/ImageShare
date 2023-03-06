@@ -15,7 +15,7 @@
     </div>
     <div class="flex items-center mb-6">
         <div class="w-20 h-20 rounded-full overflow-hidden">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            <img src="https://i.pinimg.com/150x150_RS/98/29/63/9829633e457ad3340d8619d748326ef1.jpg" alt="Profile Picture">
         </div>
         <div class="ml-6">
             <h2 class="text-lg font-medium text-gray-700">{{ auth()->user()->name }}</h2>

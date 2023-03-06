@@ -29,4 +29,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/profil', [MyProfilController::class, 'profile'])->name('profile')->middleware('auth');
 Route::put('/profil/update', [MyProfilController::class, 'updateProfile'])->name('profil.update');
-Route::get('/profil/{id}', [ProfilController::class, 'show'])->name('profile.show');
+Route::get('/profil/{user}', [ProfilController::class, 'show'])->name('profil.show');
