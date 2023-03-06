@@ -30,15 +30,21 @@
     @method('PUT')
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="name">
-                Nom
+                Nom:
             </label>
             <input type="text" id="name" name="name" value="{{ auth()->user()->name }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="email">
-                Adresse email
+                Adresse email:
             </label>
             <input type="email" id="email" name="email" value="{{ auth()->user()->email }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="description">
+                Description (max: 255):
+            </label>
+            <input type="text" id="description" name="description" value="{{ auth()->user()->description }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="flex justify-between">
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Mettre à jour</button>

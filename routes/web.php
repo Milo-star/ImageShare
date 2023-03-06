@@ -19,6 +19,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/home', [HomeController::class, 'index'])->name('welcome');
 
+Route::get('/pins/{id}', [HomeController::class, 'show'])->name('pins.show');
+
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
