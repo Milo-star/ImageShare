@@ -9,12 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Récupère tous les pins
-        $pins = Pin::all();
-
-        // Retourne la vue pour la page d'accueil et transmet les pins
-        return view('welcome', ['pins' => $pins]);
+        $pins = Pin::orderBy('created_at', 'desc')->get();
+        return view('welcome', compact('pins'));
     }
+    
 
     public function show($id)
     {
