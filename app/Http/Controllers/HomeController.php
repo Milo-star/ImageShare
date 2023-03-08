@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pin;
-use App\Models\User;
 
 class HomeController extends Controller
 {
